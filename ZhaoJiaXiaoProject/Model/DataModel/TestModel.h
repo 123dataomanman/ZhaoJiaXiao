@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  TestModel.h
 //  ZhaoJiaXiaoProject
 //
 //  Created by TBXark on 15-4-3.
 //  Copyright (c) 2015年 TBXark. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "LeafLevelModel.h"
 
-@interface ViewController : UINavigationController
-
+@interface TestModel : LeafLevelModel
 
 @end
-

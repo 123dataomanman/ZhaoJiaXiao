@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TableViewController.h
 //  ZhaoJiaXiaoProject
 //
 //  Created by TBXark on 15-4-3.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UINavigationController
-
+@interface TableViewController : UITableViewController
 
 @end
-

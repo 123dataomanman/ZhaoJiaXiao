@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  TestModel.m
 //  ZhaoJiaXiaoProject
 //
 //  Created by TBXark on 15-4-3.
 //  Copyright (c) 2015年 TBXark. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TestModel.h"
 
-@interface ViewController : UINavigationController
-
+@implementation TestModel
 
 @end
-
