@@ -21,7 +21,7 @@
         _mimage = [set stringForColumn:@"mimage"];
         _pid = [set intForColumn:@"pid"];
         _pname = [set stringForColumn:@"pname"];
-        _sid = [set intForColumn:@"sid"];
+        _sid = [set stringForColumn:@"sid"];
         _sname = [set stringForColumn:@"sname"];
         _mstatus = [set intForColumn:@"mstatus"];
         _marea = [set stringForColumn:@"marea"];

@@ -13,8 +13,10 @@
 
 static DataBaseManager *_mainManager;
 #define CREATEINDEX     @"SELECT serial FROM %@ WHERE %@;"
-#define SELECTFROMTABLE @"SELECT * FROM %@ WHERE Serial = ?;"
+#define SELECTFROMTABLE @"SELECT * FROM %@ WHERE serial = ?;"
 #define COUNTTABLEROW   @"SELECT COUNT(*) AS COUNT FROM %@ WHERE %@;"
+#define RESULTCHECK     @"SELECT manswer FROM leaflevel WHERE serial = ?"
+#define MAXSERIALNUM   @"SELECT MAX(serial) AS MAXNUM FROM %@;"
 
 @interface DataBaseManager ()
 
@@ -79,6 +81,39 @@ static DataBaseManager *_mainManager;
     return indexArry;
 }
 
+- (NSArray *)examinationResult:(NSDictionary *)answer
+{
+    [_db open];
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    for (NSNumber *serial in answer) {
+        FMResultSet *set = [_db executeQuery:RESULTCHECK,serial];
+        NSString *resultStr;
+        while ([set next]) {
+            resultStr = [set stringForColumn:@"manswer"];
+        }
+        if ([answer[serial] isEqualToString:resultStr]) {
+            [result addObject:[NSNumber numberWithBool:YES]];
+        }else
+        {
+            [result addObject:[NSNumber numberWithBool:NO]];
+        }
+    }
+    [_db close];
+    return result;
+}
+
+- (NSInteger)maxSerialNumberFromTable:(NSString *)table
+{
+    [_db open];
+    NSInteger maxNum = 0;
+    NSString *query = [NSString stringWithFormat:MAXSERIALNUM,table];
+    FMResultSet *set = [_db executeQuery:query];
+    while ([set next]) {
+        maxNum = [set intForColumn:@"MAXNUM"];
+    }
+    [_db close];
+    return maxNum;
+}
 
 
 @end

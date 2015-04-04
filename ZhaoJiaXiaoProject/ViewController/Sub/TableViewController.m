@@ -10,12 +10,13 @@
 #import "DataBaseManager.h"
 #import "FirstLevelMadel.h"
 #import "SecondTableViewController.h"
+#import "DataSource.h"
 
 @interface TableViewController ()
 
 @property (strong,nonatomic) DataBaseManager *db;
-@property (strong,nonatomic) NSMutableDictionary *itemDict;
-@property (assign,nonatomic) CGFloat width;
+
+@property (strong,nonatomic) DataSource *dataSource;
 
 @end
 
@@ -25,10 +26,15 @@
     [super viewDidLoad];
     self.title = @"交规学习";
     _db = [DataBaseManager shareDataBaseManager];
-    _itemDict = [[NSMutableDictionary alloc] init];
-    _width = self.tableView.frame.size.width;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TEST"];
+    
     self.tableView.rowHeight = 50;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:firstlevel];
+    NSArray *arry = [_db createIndexForTable:firstlevel withQuery:@"pid > 0"];
+    _dataSource = [[DataSource alloc] initWithTableName:firstlevel indexArry:arry configureBlock:^(DataModel *item, UITableViewCell *cell) {
+        FirstLevelMadel *model = (FirstLevelMadel *)item;
+        cell.textLabel.text = model.pname;
+    }];
+    self.tableView.dataSource = _dataSource;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,32 +49,11 @@
     self.navigationController.toolbarHidden = YES;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    NSInteger count = [_db countRowFromTable:firstlevel withQuery:@"pid > 0"];
-    return count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TEST" forIndexPath:indexPath];
-    FirstLevelMadel *item = [_itemDict objectForKey:indexPath];
-    if (item == nil) {
-        item = [[FirstLevelMadel alloc] initWithTableName:firstlevel serialNumber:[NSNumber numberWithInteger:(indexPath.row + 1)]];
-        [_itemDict setObject:item forKey:indexPath];
-    }
-    cell.textLabel.text = item.pname;
-    cell.textLabel.font = [UIFont systemFontOfSize:13];
-    cell.textLabel.numberOfLines = 0;
-    return cell;
-}
-
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SecondTableViewController *second = [[SecondTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    second.firstItem = [[FirstLevelMadel alloc] initWithTableName:firstlevel serialNumber:[NSNumber numberWithInteger:(indexPath.row + 1)]];
+    second.firstItem = (FirstLevelMadel *)[_dataSource findDataModelWithIndexPath:indexPath];
     [self.navigationController pushViewController:second animated:YES];
 }
 

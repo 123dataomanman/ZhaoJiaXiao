@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="116" id="KGk-i7-Jjw" customClass="ResultTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVU-WV-HJd">
+                        <rect key="frame" x="8" y="9" width="300" height="50"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="你的答案:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEC-84-vE8">
+                        <rect key="frame" x="8" y="71" width="75" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="TZC-vn-5CG"/>
+                            <constraint firstAttribute="height" constant="21" id="ypz-p3-UW0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.13333334029999999" green="0.40392160420000001" blue="0.63921570780000003" alpha="1" colorSpace="deviceRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="正确答案:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hx6-TC-GsD">
+                        <rect key="frame" x="174" y="71" width="75" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="Exj-bm-rMs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEF-La-UGO">
+                        <rect key="frame" x="257" y="71" width="75" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seN-fV-2WQ">
+                        <rect key="frame" x="91" y="71" width="75" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="7f7-Hj-ZXE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.015686275440000001" green="0.49803924560000001" blue="0.74901962280000001" alpha="1" colorSpace="deviceRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Hx6-TC-GsD" firstAttribute="leading" secondItem="seN-fV-2WQ" secondAttribute="trailing" constant="8" symbolic="YES" id="6sl-A7-bz9"/>
+                    <constraint firstItem="Hx6-TC-GsD" firstAttribute="baseline" secondItem="vEF-La-UGO" secondAttribute="baseline" id="Grm-jS-0nr"/>
+                    <constraint firstItem="AEC-84-vE8" firstAttribute="baseline" secondItem="seN-fV-2WQ" secondAttribute="baseline" id="MY4-7a-yoE"/>
+                    <constraint firstItem="EVU-WV-HJd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="NAY-3c-QfV"/>
+                    <constraint firstItem="seN-fV-2WQ" firstAttribute="leading" secondItem="AEC-84-vE8" secondAttribute="trailing" constant="8" symbolic="YES" id="R1Q-yR-WV1"/>
+                    <constraint firstItem="EVU-WV-HJd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="WCm-zl-0Ko"/>
+                    <constraint firstItem="EVU-WV-HJd" firstAttribute="leading" secondItem="AEC-84-vE8" secondAttribute="leading" id="Ze1-ml-NWl"/>
+                    <constraint firstItem="AEC-84-vE8" firstAttribute="top" secondItem="EVU-WV-HJd" secondAttribute="bottom" constant="12" id="acb-OD-hah"/>
+                    <constraint firstItem="vEF-La-UGO" firstAttribute="firstBaseline" secondItem="Hx6-TC-GsD" secondAttribute="firstBaseline" id="c1I-mN-N3S"/>
+                    <constraint firstItem="AEC-84-vE8" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="fEX-nX-QDd"/>
+                    <constraint firstItem="seN-fV-2WQ" firstAttribute="firstBaseline" secondItem="AEC-84-vE8" secondAttribute="firstBaseline" id="flv-nw-NKz"/>
+                    <constraint firstItem="Hx6-TC-GsD" firstAttribute="firstBaseline" secondItem="seN-fV-2WQ" secondAttribute="firstBaseline" id="ise-ru-YjL"/>
+                    <constraint firstItem="vEF-La-UGO" firstAttribute="leading" secondItem="Hx6-TC-GsD" secondAttribute="trailing" constant="8" symbolic="YES" id="mTw-TB-WQo"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vEF-La-UGO" secondAttribute="trailing" constant="-20" id="si6-Tv-bSQ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="EVU-WV-HJd" secondAttribute="trailing" constant="4" id="tox-KU-XLh"/>
+                    <constraint firstItem="seN-fV-2WQ" firstAttribute="baseline" secondItem="Hx6-TC-GsD" secondAttribute="baseline" id="ydg-ol-Ank"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="manswer" destination="seN-fV-2WQ" id="Qrf-Np-xgp"/>
+                <outlet property="question" destination="EVU-WV-HJd" id="W9h-To-dqn"/>
+                <outlet property="tanswer" destination="vEF-La-UGO" id="zG5-k9-bZb"/>
+            </connections>
+            <point key="canvasLocation" x="138" y="326"/>
+        </tableViewCell>
+    </objects>
+</document>

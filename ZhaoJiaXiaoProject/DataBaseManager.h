@@ -27,5 +27,8 @@
 
 - (NSArray *)createIndexForTable:(NSString *)table withQuery:(NSString *)queryStr;
 
+- (NSArray *)examinationResult:(NSDictionary *)answer;
+
+- (NSInteger)maxSerialNumberFromTable:(NSString *)table;
 
 @end
