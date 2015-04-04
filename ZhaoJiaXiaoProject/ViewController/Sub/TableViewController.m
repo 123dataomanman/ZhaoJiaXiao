@@ -30,9 +30,8 @@
     self.tableView.rowHeight = 50;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:firstlevel];
     NSArray *arry = [_db createIndexForTable:firstlevel withQuery:@"pid > 0"];
-    _dataSource = [[DataSource alloc] initWithTableName:firstlevel indexArry:arry configureBlock:^(DataModel *item, UITableViewCell *cell) {
-        FirstLevelMadel *model = (FirstLevelMadel *)item;
-        cell.textLabel.text = model.pname;
+    _dataSource = [[DataSource alloc] initWithTableName:firstlevel indexArry:arry configureBlock:^(FirstLevelMadel *item, UITableViewCell *cell) {
+        cell.textLabel.text = item.pname;
     }];
     self.tableView.dataSource = _dataSource;
 }

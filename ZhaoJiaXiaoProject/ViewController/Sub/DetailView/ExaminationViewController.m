@@ -98,6 +98,7 @@
     ResultViewController *result = [[ResultViewController alloc] initWithStyle:UITableViewStylePlain];
     result.indexArry = self.indexArry;
     result.answerDict = _answerDict;
+    result.selectDict = _dict;
     [self.navigationController pushViewController:result animated:YES];
 }
 

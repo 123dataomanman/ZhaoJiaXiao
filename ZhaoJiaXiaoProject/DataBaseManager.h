@@ -13,8 +13,10 @@
 #define secondlevel @"secondlevel"
 #define studytable  @"studytable"
 #define testtable   @"testtable"
+#define mytest      @"MYTEST"
 
 @class DataModel;
+@class TestResultModel;
 
 @interface DataBaseManager : NSObject
 
@@ -27,8 +29,13 @@
 
 - (NSArray *)createIndexForTable:(NSString *)table withQuery:(NSString *)queryStr;
 
-- (NSArray *)examinationResult:(NSDictionary *)answer;
+- (NSDictionary *)examinationResult:(NSDictionary *)answer;
 
 - (NSInteger)maxSerialNumberFromTable:(NSString *)table;
+- (void)saveMistakeForSerialNumber:(NSNumber *)serial configureMarea:(NSString *)marea;
+- (BOOL)deleteMistakeForSerialNumber:(NSNumber *)seria;
+- (BOOL)saveTestResult:(TestResultModel *)model;
+- (void)cleanAllTestResult;
+
 
 @end

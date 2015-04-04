@@ -18,6 +18,8 @@
 @property (assign,nonatomic) NSInteger indexNum;
 
 @property (strong,nonatomic) LeafLevelModel *leafItem;
+@property (strong,nonatomic) UITextView *detial;
+
 
 @property (strong,nonatomic) UISegmentedControl *selectSegmented;
 @property (strong,nonatomic) UISegmentedControl *judgeSegmented;
@@ -35,6 +37,8 @@
 - (void)nextItem:(id)sender;
 - (void)commitItem:(id)sender;
 - (void)changeText;
+- (void)changeSegment;
+- (void)showAnswer;
 - (void)segmentValueChange:(UISegmentedControl *)segment;
 
 @end

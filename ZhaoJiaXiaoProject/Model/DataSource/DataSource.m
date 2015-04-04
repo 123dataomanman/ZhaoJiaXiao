@@ -10,11 +10,10 @@
 #import "DataModel.h"
 #import "DataModelBuilder.h"
 
+
 @interface DataSource ()
 
 @property (nonatomic,copy) NSString *tableName;
-@property (nonatomic,strong) NSArray *indexArry;
-@property (nonatomic,strong) NSMutableDictionary *itemDict;
 @property (nonatomic,copy) ConfigureCell configureBlock;
 
 @end
@@ -29,6 +28,7 @@
         _indexArry = arry;
         _itemDict = [[NSMutableDictionary alloc] init];
         _configureBlock = [block copy];
+        _tableCanEdit = NO;
     }
     
     return self;
@@ -67,5 +67,18 @@
     _configureBlock(model,cell);
     return cell;
 }
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return _tableCanEdit;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [_delegate tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+    }
+}
+
 
 @end

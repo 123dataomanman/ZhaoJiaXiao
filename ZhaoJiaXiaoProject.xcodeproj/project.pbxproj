@@ -196,6 +196,17 @@
 		6A14C91F1ACEBE7C00233637 /* ResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A14C91D1ACEBE7C00233637 /* ResultTableViewCell.m */; };
 		6A14C9201ACEBE7C00233637 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A14C91E1ACEBE7C00233637 /* ResultTableViewCell.xib */; };
 		6A479A3B1ACFA3AC00358FAC /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A479A3A1ACFA3AC00358FAC /* IndexViewController.m */; };
+		6A479A3F1ACFB79200358FAC /* NSString+ChangeBR.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A479A3E1ACFB79200358FAC /* NSString+ChangeBR.m */; };
+		6A479A421ACFBBF900358FAC /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A479A411ACFBBF900358FAC /* AnswerViewController.m */; };
+		6A479A451ACFC6D400358FAC /* WrongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A479A441ACFC6D400358FAC /* WrongViewController.m */; };
+		6A479A4E1ACFD09C00358FAC /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A479A4C1ACFD09C00358FAC /* SettingTableViewController.m */; };
+		6A479A521ACFD45B00358FAC /* TestResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A479A511ACFD45B00358FAC /* TestResultModel.m */; };
+		6A479A551ACFD9A300358FAC /* TestResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A479A541ACFD9A300358FAC /* TestResultViewController.m */; };
+		6A479A591ACFD9C300358FAC /* TestResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A479A571ACFD9C300358FAC /* TestResultTableViewCell.m */; };
+		6A479A5A1ACFD9C300358FAC /* TestResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A479A581ACFD9C300358FAC /* TestResultTableViewCell.xib */; };
+		6A479A5D1ACFE23A00358FAC /* NumberSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A479A5C1ACFE23A00358FAC /* NumberSegmentedControl.m */; };
+		6A479A611ACFE6A600358FAC /* NumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A479A5F1ACFE6A600358FAC /* NumTableViewCell.m */; };
+		6A479A621ACFE6A600358FAC /* NumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A479A601ACFE6A600358FAC /* NumTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -426,6 +437,26 @@
 		6A14C91E1ACEBE7C00233637 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultTableViewCell.xib; path = View/ResultTableViewCell.xib; sourceTree = "<group>"; };
 		6A479A391ACFA3AC00358FAC /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexViewController.h; path = ViewController/Main/IndexViewController.h; sourceTree = "<group>"; };
 		6A479A3A1ACFA3AC00358FAC /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexViewController.m; path = ViewController/Main/IndexViewController.m; sourceTree = "<group>"; };
+		6A479A3D1ACFB79200358FAC /* NSString+ChangeBR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+ChangeBR.h"; path = "Category/NSString+ChangeBR.h"; sourceTree = "<group>"; };
+		6A479A3E1ACFB79200358FAC /* NSString+ChangeBR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+ChangeBR.m"; path = "Category/NSString+ChangeBR.m"; sourceTree = "<group>"; };
+		6A479A401ACFBBF900358FAC /* AnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnswerViewController.h; path = ViewController/Sub/DetailView/AnswerViewController.h; sourceTree = "<group>"; };
+		6A479A411ACFBBF900358FAC /* AnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnswerViewController.m; path = ViewController/Sub/DetailView/AnswerViewController.m; sourceTree = "<group>"; };
+		6A479A431ACFC6D400358FAC /* WrongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WrongViewController.h; path = ViewController/Sub/WrongViewController.h; sourceTree = "<group>"; };
+		6A479A441ACFC6D400358FAC /* WrongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WrongViewController.m; path = ViewController/Sub/WrongViewController.m; sourceTree = "<group>"; };
+		6A479A4B1ACFD09C00358FAC /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingTableViewController.h; path = ViewController/Main/SettingTableViewController.h; sourceTree = "<group>"; };
+		6A479A4C1ACFD09C00358FAC /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingTableViewController.m; path = ViewController/Main/SettingTableViewController.m; sourceTree = "<group>"; };
+		6A479A501ACFD45B00358FAC /* TestResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestResultModel.h; path = Model/DataModel/TestResultModel.h; sourceTree = "<group>"; };
+		6A479A511ACFD45B00358FAC /* TestResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestResultModel.m; path = Model/DataModel/TestResultModel.m; sourceTree = "<group>"; };
+		6A479A531ACFD9A300358FAC /* TestResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestResultViewController.h; path = ViewController/Sub/TestResultViewController.h; sourceTree = "<group>"; };
+		6A479A541ACFD9A300358FAC /* TestResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestResultViewController.m; path = ViewController/Sub/TestResultViewController.m; sourceTree = "<group>"; };
+		6A479A561ACFD9C300358FAC /* TestResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestResultTableViewCell.h; path = View/TestResultTableViewCell.h; sourceTree = "<group>"; };
+		6A479A571ACFD9C300358FAC /* TestResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestResultTableViewCell.m; path = View/TestResultTableViewCell.m; sourceTree = "<group>"; };
+		6A479A581ACFD9C300358FAC /* TestResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestResultTableViewCell.xib; path = View/TestResultTableViewCell.xib; sourceTree = "<group>"; };
+		6A479A5B1ACFE23900358FAC /* NumberSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NumberSegmentedControl.h; path = View/NumberSegmentedControl.h; sourceTree = "<group>"; };
+		6A479A5C1ACFE23A00358FAC /* NumberSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NumberSegmentedControl.m; path = View/NumberSegmentedControl.m; sourceTree = "<group>"; };
+		6A479A5E1ACFE6A600358FAC /* NumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NumTableViewCell.h; path = View/NumTableViewCell.h; sourceTree = "<group>"; };
+		6A479A5F1ACFE6A600358FAC /* NumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NumTableViewCell.m; path = View/NumTableViewCell.m; sourceTree = "<group>"; };
+		6A479A601ACFE6A600358FAC /* NumTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NumTableViewCell.xib; path = View/NumTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -468,6 +499,7 @@
 		6A14C6251ACE352B00233637 /* ZhaoJiaXiaoProject */ = {
 			isa = PBXGroup;
 			children = (
+				6A479A3C1ACFB76000358FAC /* Category */,
 				6A14C64F1ACE356B00233637 /* Vendor */,
 				6A14C64D1ACE354900233637 /* View */,
 				6A14C64C1ACE354400233637 /* Model */,
@@ -523,6 +555,14 @@
 				6A14C91C1ACEBE7C00233637 /* ResultTableViewCell.h */,
 				6A14C91D1ACEBE7C00233637 /* ResultTableViewCell.m */,
 				6A14C91E1ACEBE7C00233637 /* ResultTableViewCell.xib */,
+				6A479A561ACFD9C300358FAC /* TestResultTableViewCell.h */,
+				6A479A571ACFD9C300358FAC /* TestResultTableViewCell.m */,
+				6A479A581ACFD9C300358FAC /* TestResultTableViewCell.xib */,
+				6A479A5B1ACFE23900358FAC /* NumberSegmentedControl.h */,
+				6A479A5C1ACFE23A00358FAC /* NumberSegmentedControl.m */,
+				6A479A5E1ACFE6A600358FAC /* NumTableViewCell.h */,
+				6A479A5F1ACFE6A600358FAC /* NumTableViewCell.m */,
+				6A479A601ACFE6A600358FAC /* NumTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -576,6 +616,8 @@
 				6A14C67C1ACE368700233637 /* StudentModel.m */,
 				6A14C6721ACE364400233637 /* TestModel.h */,
 				6A14C6731ACE364400233637 /* TestModel.m */,
+				6A479A501ACFD45B00358FAC /* TestResultModel.h */,
+				6A479A511ACFD45B00358FAC /* TestResultModel.m */,
 			);
 			name = MataModel;
 			sourceTree = "<group>";
@@ -627,6 +669,8 @@
 				6A14C62E1ACE352B00233637 /* ViewController.m */,
 				6A479A391ACFA3AC00358FAC /* IndexViewController.h */,
 				6A479A3A1ACFA3AC00358FAC /* IndexViewController.m */,
+				6A479A4B1ACFD09C00358FAC /* SettingTableViewController.h */,
+				6A479A4C1ACFD09C00358FAC /* SettingTableViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -813,6 +857,10 @@
 				6A14C68E1ACE681B00233637 /* SecondTableViewController.m */,
 				6A14C9191ACEB89900233637 /* ResultViewController.h */,
 				6A14C91A1ACEB89900233637 /* ResultViewController.m */,
+				6A479A431ACFC6D400358FAC /* WrongViewController.h */,
+				6A479A441ACFC6D400358FAC /* WrongViewController.m */,
+				6A479A531ACFD9A300358FAC /* TestResultViewController.h */,
+				6A479A541ACFD9A300358FAC /* TestResultViewController.m */,
 			);
 			name = TableView;
 			sourceTree = "<group>";
@@ -826,8 +874,19 @@
 				6A14C9141ACEB22D00233637 /* PractiseViewController.m */,
 				6A14C9161ACEB3E400233637 /* ExaminationViewController.h */,
 				6A14C9171ACEB3E400233637 /* ExaminationViewController.m */,
+				6A479A401ACFBBF900358FAC /* AnswerViewController.h */,
+				6A479A411ACFBBF900358FAC /* AnswerViewController.m */,
 			);
 			name = DetailView;
+			sourceTree = "<group>";
+		};
+		6A479A3C1ACFB76000358FAC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6A479A3D1ACFB79200358FAC /* NSString+ChangeBR.h */,
+				6A479A3E1ACFB79200358FAC /* NSString+ChangeBR.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1022,6 +1081,7 @@
 				6A14C8E31ACE8E2A00233637 /* 318.png in Resources */,
 				6A14C8931ACE8E2A00233637 /* 238.png in Resources */,
 				6A14C87E1ACE8E2A00233637 /* 217.png in Resources */,
+				6A479A621ACFE6A600358FAC /* NumTableViewCell.xib in Resources */,
 				6A14C8AA1ACE8E2A00233637 /* 261.png in Resources */,
 				6A14C8FB1ACE8E2A00233637 /* 342.png in Resources */,
 				6A14C8DF1ACE8E2A00233637 /* 314.png in Resources */,
@@ -1029,6 +1089,7 @@
 				6A14C8ED1ACE8E2A00233637 /* 328.png in Resources */,
 				6A14C8A91ACE8E2A00233637 /* 260.png in Resources */,
 				6A14C8DB1ACE8E2A00233637 /* 310.png in Resources */,
+				6A479A5A1ACFD9C300358FAC /* TestResultTableViewCell.xib in Resources */,
 				6A14C8C21ACE8E2A00233637 /* 285.png in Resources */,
 				6A14C8A31ACE8E2A00233637 /* 254.png in Resources */,
 				6A14C8CC1ACE8E2A00233637 /* 295.png in Resources */,
@@ -1090,9 +1151,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A14C62F1ACE352B00233637 /* ViewController.m in Sources */,
+				6A479A3F1ACFB79200358FAC /* NSString+ChangeBR.m in Sources */,
 				6A14C9181ACEB3E400233637 /* ExaminationViewController.m in Sources */,
 				6A14C66B1ACE360800233637 /* LeafLevelModel.m in Sources */,
 				6A14C65D1ACE358A00233637 /* FMDatabasePool.m in Sources */,
+				6A479A551ACFD9A300358FAC /* TestResultViewController.m in Sources */,
 				6A14C6641ACE35C900233637 /* DataModel.m in Sources */,
 				6A14C9151ACEB22D00233637 /* PractiseViewController.m in Sources */,
 				6A14C6741ACE364400233637 /* TestModel.m in Sources */,
@@ -1100,18 +1163,25 @@
 				6A14C62C1ACE352B00233637 /* AppDelegate.m in Sources */,
 				6A14C68C1ACE431800233637 /* DataSource.m in Sources */,
 				6A14C6881ACE42B700233637 /* TableViewController.m in Sources */,
+				6A479A451ACFC6D400358FAC /* WrongViewController.m in Sources */,
 				6A14C6921ACE6DAD00233637 /* LeafLevelViewController.m in Sources */,
 				6A14C65E1ACE358A00233637 /* FMDatabaseQueue.m in Sources */,
 				6A14C6681ACE35EA00233637 /* FirstLevelMadel.m in Sources */,
 				6A14C6291ACE352B00233637 /* main.m in Sources */,
+				6A479A421ACFBBF900358FAC /* AnswerViewController.m in Sources */,
 				6A14C65B1ACE358A00233637 /* FMDatabase.m in Sources */,
+				6A479A611ACFE6A600358FAC /* NumTableViewCell.m in Sources */,
 				6A14C65F1ACE358A00233637 /* FMResultSet.m in Sources */,
 				6A14C90F1ACE973900233637 /* DataModelBuilder.m in Sources */,
+				6A479A591ACFD9C300358FAC /* TestResultTableViewCell.m in Sources */,
 				6A14C91F1ACEBE7C00233637 /* ResultTableViewCell.m in Sources */,
+				6A479A521ACFD45B00358FAC /* TestResultModel.m in Sources */,
 				6A14C65C1ACE358A00233637 /* FMDatabaseAdditions.m in Sources */,
 				6A14C67D1ACE368700233637 /* StudentModel.m in Sources */,
 				6A14C6811ACE394D00233637 /* DataBaseManager.m in Sources */,
+				6A479A4E1ACFD09C00358FAC /* SettingTableViewController.m in Sources */,
 				6A14C68F1ACE681B00233637 /* SecondTableViewController.m in Sources */,
+				6A479A5D1ACFE23A00358FAC /* NumberSegmentedControl.m in Sources */,
 				6A14C91B1ACEB89900233637 /* ResultViewController.m in Sources */,
 				6A479A3B1ACFA3AC00358FAC /* IndexViewController.m in Sources */,
 			);

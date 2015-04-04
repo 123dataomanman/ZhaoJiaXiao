@@ -9,6 +9,9 @@
 #import "IndexViewController.h"
 #import "TableViewController.h"
 #import "ExaminationViewController.h"
+#import "WrongViewController.h"
+#import "TestResultViewController.h"
+#import "SettingTableViewController.h"
 
 #import "DataBaseManager.h"
 
@@ -46,11 +49,22 @@
     rect.origin.y = yValue/2.0;
     logo.frame = rect;
     [self.view addSubview:logo];
+    [self setUpToolBarButton];
+    
+
+}
+
+- (void)setUpToolBarButton
+{
+    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *setting = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(indexPushToViewController:)];
+    setting.tag = 10004;
+    self.toolbarItems = @[space,setting,space];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-//    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.toolbarHidden = NO;
 }
 
 
@@ -84,21 +98,31 @@
         case 10001:
         {
             ExaminationViewController *view = [[ExaminationViewController alloc] init];
-            view.examCount = 10;
+            view.examCount = [[NSUserDefaults standardUserDefaults] integerForKey:@"numValue"];
             view.maxNum = [_db maxSerialNumberFromTable:leaflevel];
             [self.navigationController pushViewController:view animated:YES];
         }
             break;
         case 10002:
         {
+            WrongViewController *view = [[WrongViewController alloc] initWithStyle:UITableViewStylePlain];
+            [self.navigationController pushViewController:view animated:YES];
             
         }
             break;
         case 10003:
         {
+            TestResultViewController *view = [[TestResultViewController alloc] initWithStyle:UITableViewStylePlain];
+            [self.navigationController pushViewController:view animated:YES];
             
         }
             break;
+        case 10004:
+        {
+            SettingTableViewController *view = [[SettingTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+            [self.navigationController pushViewController:view animated:YES];
+            
+        }
         default:
             break;
     }

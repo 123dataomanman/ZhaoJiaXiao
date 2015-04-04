@@ -13,6 +13,7 @@
 #import "SecondLevelModel.h"
 #import "StudentModel.h"
 #import "TestModel.h"
+#import "TestResultModel.h"
 
 @implementation DataModelBuilder
 
@@ -32,6 +33,9 @@
     }else if ([tableName isEqualToString:testtable])
     {
         return [[TestModel alloc] initWithTableName:tableName serialNumber:serial];
+    }else if([tableName isEqualToString:mytest])
+    {
+        return [[TestResultModel alloc] initWithTableName:tableName serialNumber:serial];
     }else
     {
         return nil;

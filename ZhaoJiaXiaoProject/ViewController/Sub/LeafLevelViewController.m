@@ -11,13 +11,13 @@
 #import "SecondLevelModel.h"
 #import "LeafLevelModel.h"
 #import "DataSource.h"
+#import "NSString+ChangeBR.h"
 
 @interface LeafLevelViewController ()
 
 @property (strong,nonatomic) DataBaseManager *db;
 @property (strong,nonatomic) DataSource *dataSource;
 
-@property (strong,nonatomic) UITextView *detial;
 @property (strong,nonatomic) UIImageView *imageView;
 
 @property (assign,nonatomic) CGRect segmentedFrame;
@@ -111,8 +111,7 @@
     self.title = [NSString stringWithFormat:@"%ld/%ld",(long)_indexNum+1,(long)(_indexArry.count)];
     _answer.text = @"按确认键确认结果";
     _leafItem = (LeafLevelModel *)[_dataSource findDataModelWithIndex:_indexNum];
-    NSString *htmlStr = [_leafItem.mquestion stringByReplacingOccurrencesOfString:@"<BR>" withString:@"\n"];
-    _detial.text = htmlStr;
+    _detial.text = [_leafItem.mquestion changeBrToEnter];
     [self changeImage];
     [self changeSegment];
 }
@@ -120,7 +119,7 @@
 - (void)changeImage
 {
     if ([_leafItem.mimage isEqualToString:@""]) {
-        _imageView = nil;
+        _imageView.image = nil;
     }
     else
     {
@@ -131,7 +130,7 @@
 
 - (void)changeSegment
 {
-    if ([(NSString *)_leafItem.sid hasSuffix:@".2"]) {
+    if (_leafItem.mtype == 2) {
         _selectSegmented.frame = CGRectZero;
         _judgeSegmented.frame = _segmentedFrame;
         _segmentNow = _judgeSegmented;
@@ -145,6 +144,13 @@
         _segmentNowArry = _selectSegmentedControlItem;
         _isSelectType = YES;
     }
+}
+
+- (void)showAnswer
+{
+    NSString *detial = self.detial.text;
+    detial = [detial stringByAppendingFormat:@"\n\n答案解析:\n%@",[self.leafItem.mdesc changeBrToEnter]];
+    self.detial.text = detial;
 }
 
 - (void)beforItem:(id)sender

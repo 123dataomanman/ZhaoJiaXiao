@@ -10,17 +10,26 @@
 #import "FMDatabase.h"
 #import "FMResultSet.h"
 #import "DataModel.h"
+#import "TestResultModel.h"
 
-static DataBaseManager *_mainManager;
+static DataBaseManager *_mainManager = nil;
+
 #define CREATEINDEX     @"SELECT serial FROM %@ WHERE %@;"
 #define SELECTFROMTABLE @"SELECT * FROM %@ WHERE serial = ?;"
 #define COUNTTABLEROW   @"SELECT COUNT(*) AS COUNT FROM %@ WHERE %@;"
 #define RESULTCHECK     @"SELECT manswer FROM leaflevel WHERE serial = ?"
-#define MAXSERIALNUM   @"SELECT MAX(serial) AS MAXNUM FROM %@;"
+#define MAXSERIALNUM    @"SELECT MAX(serial) AS MAXNUM FROM %@;"
+#define SAVEWRONG       @"INSERT INTO studytable SELECT * FROM  leaflevel WHERE serial = ?;"
+#define CHANGESAVE      @"UPDATE studytable SET marea = ? WHERE serial = ?;"
+#define DELETEWRONG     @"DELETE FROM studytable WHERE serial = ?;"
+#define TESTTABLE       @"CREATE TABLE IF NOT EXISTS MYTEST(serial integer PRIMARY KEY AUTOINCREMENT,numOfTest integer,numOfWrong integer,testdate text);"
+#define INSERTTEST      @"INSERT INTO MYTEST(numOfTest,numOfWrong,testdate) VALUES(?,?,?);"
+#define DELETETEST      @"DELETE FROM MYTEST;"
 
 @interface DataBaseManager ()
 
 @property (nonatomic,strong) FMDatabase *db;
+
 
 @end
 
@@ -41,8 +50,25 @@ static DataBaseManager *_mainManager;
 
 - (void)configureDataBase
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"sqlite"];
-    _db = [FMDatabase databaseWithPath:path];
+    NSArray *pathArry = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *dbPath = [NSString stringWithFormat:@"%@/data.sqlite",pathArry[0]];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    if (![fm fileExistsAtPath:dbPath]) {
+        NSError *error;
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"sqlite"];
+        [fm copyItemAtPath:path toPath:dbPath error:&error];
+        if (error != nil) {
+            NSLog(@"%@",error);
+        }
+        [[NSUserDefaults standardUserDefaults] setInteger:10 forKey:@"numValue"];
+    }
+    NSLog(@"%@",dbPath);
+    _db = [FMDatabase databaseWithPath:dbPath];
+    [_db open];
+    [_db executeUpdate:TESTTABLE];
+    [_db close];
+    
+    
 }
 
 - (void)selectFromTable:(NSString *)table serialNumber:(NSNumber *)serial configureDataModel:(DataModel *)data
@@ -52,6 +78,31 @@ static DataBaseManager *_mainManager;
     FMResultSet *set = [_db executeQuery:query,serial];
     [data configureWithFMResultSet:set];
     [_db close];
+}
+
+- (void)saveMistakeForSerialNumber:(NSNumber *)serial configureMarea:(NSString *)marea
+{
+    [_db open];
+    [_db executeUpdate:SAVEWRONG,serial];
+    [_db executeUpdate:CHANGESAVE,marea,serial];
+    [_db close];
+    
+}
+
+- (BOOL)saveTestResult:(TestResultModel *)model
+{
+    [_db open];
+    BOOL save = [_db executeUpdate:INSERTTEST,[NSNumber numberWithInteger:model.numOfTest],[NSNumber numberWithInteger:model.numOfWrong],model.date];
+    [_db close];
+    return save;
+}
+
+- (BOOL)deleteMistakeForSerialNumber:(NSNumber *)seria
+{
+    [_db open];
+    BOOL delete = [_db executeUpdate:DELETEWRONG,seria];
+    [_db close];
+    return delete;
 }
 
 - (NSInteger)countRowFromTable:(NSString *)table withQuery:(NSString *)queryStr
@@ -81,10 +132,10 @@ static DataBaseManager *_mainManager;
     return indexArry;
 }
 
-- (NSArray *)examinationResult:(NSDictionary *)answer
+- (NSDictionary *)examinationResult:(NSDictionary *)answer
 {
     [_db open];
-    NSMutableArray *result = [[NSMutableArray alloc] init];
+    NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
     for (NSNumber *serial in answer) {
         FMResultSet *set = [_db executeQuery:RESULTCHECK,serial];
         NSString *resultStr;
@@ -92,10 +143,10 @@ static DataBaseManager *_mainManager;
             resultStr = [set stringForColumn:@"manswer"];
         }
         if ([answer[serial] isEqualToString:resultStr]) {
-            [result addObject:[NSNumber numberWithBool:YES]];
+            [result setObject:[NSNumber numberWithBool:YES] forKey:serial];
         }else
         {
-            [result addObject:[NSNumber numberWithBool:NO]];
+            [result setObject:[NSNumber numberWithBool:NO] forKey:serial];
         }
     }
     [_db close];
@@ -113,6 +164,18 @@ static DataBaseManager *_mainManager;
     }
     [_db close];
     return maxNum;
+}
+
+- (void)cleanAllTestResult
+{
+    [_db open];
+    [_db executeUpdate:DELETETEST];
+    [_db close];
+}
+
+- (void)saveTestResult
+{
+    
 }
 
 
