@@ -22,11 +22,8 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AMw-Qv-RPO" customClass="NumberSegmentedControl">
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fMA-Yo-aHk" customClass="NumberSegmentedControl">
                         <rect key="frame" x="189" y="8" width="123" height="29"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="100" id="ZMy-no-L8o"/>
-                        </constraints>
                         <segments>
                             <segment title="First"/>
                             <segment title="Second"/>
@@ -34,16 +31,16 @@
                     </segmentedControl>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="AMw-Qv-RPO" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="3AN-OL-WNi"/>
-                    <constraint firstItem="AMw-Qv-RPO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="JWG-n9-dsF"/>
-                    <constraint firstItem="vAB-Bz-Uka" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Lqv-Pi-orD"/>
-                    <constraint firstItem="vAB-Bz-Uka" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cB0-87-Klc"/>
-                    <constraint firstItem="vAB-Bz-Uka" firstAttribute="baseline" secondItem="AMw-Qv-RPO" secondAttribute="firstBaseline" id="mcr-h9-Ond"/>
-                    <constraint firstItem="vAB-Bz-Uka" firstAttribute="firstBaseline" secondItem="AMw-Qv-RPO" secondAttribute="baseline" id="tkx-8a-ZVb"/>
+                    <constraint firstItem="fMA-Yo-aHk" firstAttribute="baseline" secondItem="vAB-Bz-Uka" secondAttribute="firstBaseline" id="9mC-vT-lyp"/>
+                    <constraint firstItem="vAB-Bz-Uka" firstAttribute="baseline" secondItem="fMA-Yo-aHk" secondAttribute="firstBaseline" id="Av6-8G-llP"/>
+                    <constraint firstItem="vAB-Bz-Uka" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="E1S-nB-NSi"/>
+                    <constraint firstItem="fMA-Yo-aHk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="OpE-V4-ude"/>
+                    <constraint firstItem="fMA-Yo-aHk" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="TR6-Ik-TFC"/>
+                    <constraint firstItem="vAB-Bz-Uka" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="vtV-vl-s8n"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="numSegment" destination="AMw-Qv-RPO" id="iTC-TI-oAD"/>
+                <outlet property="numSegment" destination="fMA-Yo-aHk" id="p9B-Fl-YNa"/>
             </connections>
         </tableViewCell>
     </objects>

@@ -50,7 +50,6 @@
     UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     self.toolbarItems = @[space,save,space];
     _result = [_db examinationResult:_answerDict];
-    NSLog(@"%@",_result);
     TestResultModel *model = [[TestResultModel alloc] initWithResultDict:_result];
     [_db saveTestResult:model];
 }

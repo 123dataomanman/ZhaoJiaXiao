@@ -22,7 +22,7 @@
     [self insertSegmentWithTitle:@"-" atIndex:0 animated:NO];
     [self insertSegmentWithTitle:temp atIndex:1 animated:NO];
     [self insertSegmentWithTitle:@"+" atIndex:2 animated:NO];
-    [self setEnabled:NO forSegmentAtIndex:1];
+//    [self setEnabled:NO forSegmentAtIndex:1];
     [self addTarget:self action:@selector(segmentValueChange:) forControlEvents:UIControlEventValueChanged];
     self.tintColor = [UIColor grayColor];
     _isCongfigure = YES;
