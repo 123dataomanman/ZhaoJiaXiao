@@ -37,6 +37,7 @@
 - (void)nextItem:(id)sender;
 - (void)commitItem:(id)sender;
 - (void)changeText;
+- (void)changeImage;
 - (void)changeSegment;
 - (void)showAnswer;
 - (void)segmentValueChange:(UISegmentedControl *)segment;

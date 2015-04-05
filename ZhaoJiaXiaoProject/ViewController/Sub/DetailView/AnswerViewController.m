@@ -35,7 +35,6 @@
 {
     [super changeText];
     self.answer.text = [NSString stringWithFormat:@"正确答案为:%@\n你的答案为:%@",self.leafItem.manswer,_answerDict[[NSNumber numberWithInteger:self.leafItem.serial]]];
-    self.segmentNow = [_selectDict objectForKey:[NSNumber numberWithInteger:self.leafItem.serial]];
 }
 
 - (void)changeSegment

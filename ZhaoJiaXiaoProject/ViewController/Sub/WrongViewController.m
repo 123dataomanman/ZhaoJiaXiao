@@ -14,6 +14,7 @@
 #import "StudentModel.h"
 #import "AnswerViewController.h"
 #import "NSString+ChangeBR.h"
+#import "AnswerForWrongViewController.h"
 
 @interface WrongViewController ()<DataSource>
 
@@ -27,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"结果";
+    self.title = @"我的错题";
     _db = [DataBaseManager shareDataBaseManager];
     self.tableView.rowHeight = 50;
     UINib *nib = [UINib nibWithNibName:@"ResultTableViewCell" bundle:nil];
@@ -53,6 +54,15 @@
     _dataSource.indexArry = [_db createIndexForTable:studytable withQuery:@"serial != 0"];
     [_dataSource.itemDict removeAllObjects];
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AnswerForWrongViewController *view = [[AnswerForWrongViewController alloc] init];
+    view.rowNum = indexPath.row;
+    view.rowCount = [tableView numberOfRowsInSection:0];
+    view.dataSource = _dataSource;
+    [self.navigationController pushViewController:view animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
